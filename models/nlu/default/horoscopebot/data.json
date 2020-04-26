@@ -1,0 +1,31 @@
+{
+    "rasa_nlu_data" : {
+        "common_examples" :[
+            {
+                "text" : "Hello",
+                "intent" : "greeting",
+                "entities" : []
+            },
+            {
+                "text" : "I want to my Horoscope",
+                "intent" : "get_horoscope",
+                "entities" : [],
+            },
+            {
+                "text" : "Can you please tell me your Horoscope",
+                "intent" : "get_horoscope",
+                "entities" : []
+            },
+            {
+                "text" : "Please Subscribe Me",
+                "intent" : "subsbription"
+            }
+        ],
+        "regex_features" : [],
+        "entity_synonyms" : []
+    }
+}
+
+def predict_intent(text):
+    interpreter = Interpreter.load('./models/nlu/default/horoscopebot')
+    print(interpreter.parse(text))
